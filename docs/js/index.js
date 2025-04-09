@@ -776,7 +776,7 @@ const deleteProductsRequest = (deleteSelectedButton, selectAllCheckbox, goodsNod
       setHeaderCartCounter(data);
       setCartGoodsNumber(data.cart);
       const allProductCheckboxesArr = getAllProductCheckboxesArr();
-      setDelButtonDisable(allProductCheckboxesArr, deleteSelectedButton, checked);
+      setDelButtonDisable(allProductCheckboxesArr, deleteSelectedButton, 'checked');
       setSelectAllCheckbox(selectAllCheckbox, allProductCheckboxesArr);
       setNewPricesOnCheckboxChange(allProductCheckboxesArr, topBlockCost, goodsCount, goodsCost, discountValue);
     }
