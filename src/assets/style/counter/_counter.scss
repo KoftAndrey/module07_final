@@ -1,0 +1,59 @@
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include low-mid-size {
+    justify-content: space-between;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $light-grey;
+    background-color: transparent;
+    transition: border-color 0.2s ease;
+
+    @include low-mid-size {
+      width: 28px;
+      height: 28px;
+    }
+
+    &:hover,
+    &:active {
+      border-color: $black;
+    }
+
+    &:focus {
+      color: $dark-blue;
+      border-color: $dark-blue;
+      outline: none;
+    }
+
+    &_type_disabled {
+      cursor: not-allowed;
+
+      &:hover,
+      &:active {
+        border-color: $light-grey;
+      }
+    }
+  }
+
+  &__value {
+    padding: 0 0 2px 0;
+    font-size: 22px;
+    line-height: 150%;
+    color: $black;
+
+    @include low-mid-size {
+      font-size: 18px;
+    }
+  }
+}

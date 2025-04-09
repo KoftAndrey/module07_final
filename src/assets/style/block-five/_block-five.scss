@@ -1,0 +1,68 @@
+.block-five {
+  grid-area: block-five;
+
+  @include low-mid-size {
+    grid-area: none;
+    grid-row: 10 / 11;
+    grid-column: 1 / 10;
+  }
+
+  @include min-size {
+    grid-row: 6 / 7;
+    grid-column: 1 / 3;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    padding: 50px;
+
+    @include up-mid-size {
+      padding: 40px 30px;
+    }
+
+    @include low-mid-size {
+      padding: 26px;
+    }
+
+    @include min-size {
+      padding: 10px 15px;
+    }
+  }
+  
+  &__text {
+    display: inline-block;
+    padding: 30px 40px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #f91155;
+    background-color: #fff;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    @include up-mid-size {
+      padding: 24px 45px 23px 45px;
+      font-size: 30px;
+      border-radius: 16px;
+    }
+
+    @include low-mid-size {
+      padding: 22px 35px;
+      font-size: 20px;
+      border-radius: 12px;
+    }
+
+    @include min-size {
+      width: 100%;
+      padding: 7px 20px 9px 20px;
+      font-size: 12px;
+      text-align: center;
+      border-radius: 6px;
+    }
+  }
+}

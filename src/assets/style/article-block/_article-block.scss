@@ -1,0 +1,17 @@
+.article-block {
+  &__article {
+    margin: 0 0 150px 0;
+
+    @include up-mid-size {
+      margin: 0 0 100px 0;
+    }
+
+    @include low-mid-size {
+      margin: 0 0 80px 0;
+    }
+
+    @include min-size {
+      margin: 0 0 50px 0;
+    }
+  }
+}

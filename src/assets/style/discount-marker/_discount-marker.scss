@@ -1,0 +1,90 @@
+.discount-marker {
+  position: absolute;
+  z-index: 3;
+  width: 88px;
+  height: 88px;
+  padding: 24px 0 25px 0;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  color: $text-white;
+  background-color: #ffbd13;
+  text-align: center;
+  border-radius: 50%;
+
+  @include low-mid-size {
+    width: 60px;
+    height: 60px;
+    padding: 16px 0 18px 0;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @include min-size {
+    width: 40px;
+    height: 40px;
+    padding: 11px 0 13px 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &_position_top-right {
+    top: 20px;
+    right: 20px;
+
+    @include up-mid-size {
+      top: 10px;
+      right: 10px;
+    }
+
+    @include min-size {
+      top: 6px;
+      right: 6px;
+    }
+  }
+
+  &_position_top-left {
+    top: 20px;
+    left: 20px;
+
+    @include up-mid-size {
+      top: 10px;
+      left: 10px;
+    }
+
+    @include min-size {
+      top: 6px;
+      left: 6px;
+    }
+  }
+
+  &_position_bottom-right {
+    bottom: 20px;
+    right: 20px;
+
+    @include up-mid-size {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    @include min-size {
+      bottom: 6px;
+      right: 6px;
+    }
+  }
+
+  &_position_bottom-left {
+    bottom: 20px;
+    left: 20px;
+
+    @include up-mid-size {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    @include min-size {
+      bottom: 6px;
+      left: 6px;
+    }
+  }
+} 

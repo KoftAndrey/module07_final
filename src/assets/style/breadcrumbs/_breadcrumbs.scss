@@ -1,0 +1,69 @@
+.breadcrumbs {
+  margin: 33px 0 80px 0;
+  display: flex;
+  gap: 38px;
+  
+  @include up-mid-size {
+    margin: 10px 0 60px 0;
+  }
+
+  @include low-mid-size {
+    margin: 10px 0 50px 0;
+    gap: 48px;
+  }
+
+  @include min-size {
+    margin: 0 0 30px 0;
+    gap: 23px;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 130%;
+    font-weight: 700;
+    color: $dark-grey;
+    transition: color 0.2s ease;
+    position: relative;
+
+    &:hover {
+      color: $black;
+    }
+
+    &:not(:last-child)::after {
+      content: '';
+      width: 18px;
+      height: 18px;
+      bottom: 0;
+      right: -28px;
+      background: url('./../assets/style/breadcrumbs/img/breadcrumbs_arrow.svg') no-repeat center;
+      cursor: default;
+      position: absolute;
+
+      @include low-mid-size {
+        right: -33px;
+      }
+
+      @include min-size {
+        width: 11px;
+        height: 11px;
+        right: -17px;
+        background-size: contain;
+      }
+    }
+
+    @include low-mid-size {
+      font-size: 14px;
+    }
+
+    @include min-size {
+      font-size: 8px;
+    }
+
+    &_type_current {
+      cursor: default;
+      &:hover {
+        color: $dark-grey;
+      }
+    }
+  }
+}

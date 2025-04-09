@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopOnline</title>
+    <link rel="preload" href="assets/fonts/Lato-400.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="assets/fonts/Lato-700.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="assets/fonts/OpenSans-700.woff2" as="font" type="font/woff2" crossorigin/>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const createLink = url => {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = url;
+          document.head.append(link);
+        }
+
+        createLink('css/index.min.css');
+      })
+    </script>
+    <script defer src="js/index.min.js"></script>
+</head>
+<body>
+
+  <header class="header">
+
+    <div class="header__container container">
+    
+      <a class="header__logo logo" href="index.html" aria-label="Логотип магазина ShopOnline">Shop<span class="logo_color_blue">Online</span></a>
+
+      <button class="header__menu-button button" type="button">
+
+        <span class="header__button-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        Меню
+
+      </button>
+
+      <form class="header__search">
+
+        <input class="header__search-input" type="search" placeholder="Я ищу..." aria-label="Поле поиска товаров магазина">
+
+        <button class="header__search-button" type="submit" aria-label="Кнопка подтверждения поиска">
+
+          <svg class="header__search-icon" width="36" height="36" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_2139_213)">
+            <path d="M23.25 21H22.065L21.645 20.595C23.115 18.885 24 16.665 24 14.25C24 8.865 19.635 4.5 14.25 4.5C8.865 4.5 4.5 8.865 4.5 14.25C4.5 19.635 8.865 24 14.25 24C16.665 24 18.885 23.115 20.595 21.645L21 22.065V23.25L28.5 30.735L30.735 28.5L23.25 21V21ZM14.25 21C10.515 21 7.5 17.985 7.5 14.25C7.5 10.515 10.515 7.5 14.25 7.5C17.985 7.5 21 10.515 21 14.25C21 17.985 17.985 21 14.25 21Z"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_2139_213">
+            <rect width="36" height="36"/>
+            </clipPath>
+            </defs>
+            </svg>
+
+        </button>
+
+      </form>
+
+      <nav class="header__navigation">
+
+        <ul class="header__navigation-list">
+
+          <li class="header__navigation-item">
+            <a class="header__navigation-link header__navigation-link_type_user" href="#" aria-label="Ссылка на ваш профиль">
+
+              <svg class="header__navigation-icon" width="36" height="36" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2139_216)">
+                <path d="M18 18C21.315 18 24 15.315 24 12C24 8.685 21.315 6 18 6C14.685 6 12 8.685 12 12C12 15.315 14.685 18 18 18ZM18 21C13.995 21 6 23.01 6 27V30H30V27C30 23.01 22.005 21 18 21Z"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_2139_216">
+                <rect width="36" height="36"/>
+                </clipPath>
+                </defs>
+                </svg>
+
+                <span class="header__navigation-text">Профиль</span>
+
+            </a>
+          </li>
+
+          <li class="header__navigation-item">
+            <a 
+              class="header__navigation-link header__navigation-link_type_cart"
+              href="cart.html"
+              aria-label="Ссылка на вашу крзину. Количество товаров: 2"
+            >
+
+              <svg class="header__navigation-icon" width="36" height="36" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2139_219)">
+                <path d="M10.5 27C8.85 27 7.515 28.35 7.515 30C7.515 31.65 8.85 33 10.5 33C12.15 33 13.5 31.65 13.5 30C13.5 28.35 12.15 27 10.5 27ZM1.5 3V6H4.5L9.9 17.385L7.875 21.06C7.635 21.48 7.5 21.975 7.5 22.5C7.5 24.15 8.85 25.5 10.5 25.5H28.5V22.5H11.13C10.92 22.5 10.755 22.335 10.755 22.125L10.8 21.945L12.15 19.5H23.325C24.45 19.5 25.44 18.885 25.95 17.955L31.32 8.22C31.44 8.01 31.5 7.755 31.5 7.5C31.5 6.675 30.825 6 30 6H7.815L6.405 3H1.5ZM25.5 27C23.85 27 22.515 28.35 22.515 30C22.515 31.65 23.85 33 25.5 33C27.15 33 28.5 31.65 28.5 30C28.5 28.35 27.15 27 25.5 27Z"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_2139_219">
+                <rect width="36" height="36"/>
+                </clipPath>
+                </defs>
+                </svg>
+
+                <span class="header__navigation-text">Корзина</span>
+
+                <div class="header__cart-counter"></div>
+
+            </a>
+          </li>
+
+          <li class="header__navigation-item">
+            <a class="header__navigation-link header__navigation-link_type_favorite" href="#" aria-label="Ссылка на ваши избранные товары">
+
+              <svg class="header__navigation-icon" width="36" height="36" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2139_225)">
+                <path d="M18 32.025L15.825 30.045C8.1 23.04 3 18.42 3 12.75C3 8.13 6.63 4.5 11.25 4.5C13.86 4.5 16.365 5.715 18 7.635C19.635 5.715 22.14 4.5 24.75 4.5C29.37 4.5 33 8.13 33 12.75C33 18.42 27.9 23.04 20.175 30.06L18 32.025Z"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_2139_225">
+                <rect width="36" height="36"/>
+                </clipPath>
+                </defs>
+                </svg>
+
+                <span class="header__navigation-text">Избранное</span>
+
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+    <div class="header__menu-overlay">
+
+      <div class="header__menu-box">
+
+        <div class="header__menu">
+  
+          <div class="header__menu-container container">
+    
+            <div class="header__catalog navigation-block">
+    
+              <h3 class="navigation-block__title navigation-block__title_position_header">Каталог</h3>
+      
+              <ul class="navigation-block__list navigation-block__list_position_header" id="categories-header"></ul>
+      
+            </div>
+      
+            <div class="header__for-buyers navigation-block">
+      
+              <h3 class="navigation-block__title navigation-block__title_position_header">Покупателям</h3>
+      
+              <ul class="navigation-block__list navigation-block__list_position_header">
+      
+                <li class="navigation-block__item navigation-block__item_position_header">
+                  <a class="navigation-block__link" href="#">Оплата заказа</a>
+                </li>
+      
+                <li class="navigation-block__item navigation-block__item_position_header">
+                  <a class="navigation-block__link" href="#">Условия доставки</a>
+                </li>
+      
+                <li class="navigation-block__item navigation-block__item_position_header">
+                  <a class="navigation-block__link" href="#">Условия возврата заказа</a>
+                </li>
+      
+                <li class="navigation-block__item navigation-block__item_position_header">
+                  <a class="navigation-block__link" href="blog.html">Блог</a>
+                </li>
+      
+              </ul>
+      
+            </div>
+      
+            <div class="header__contacts navigation-block">
+      
+              <h3 class="navigation-block__title navigation-block__title_position_header">Связаться с нами</h3>
+      
+              <p class="navigation-block__item navigation-block__item_position_header">
+                <a class="navigation-block__link" href="#">Контакты</a>
+              </p>
+      
+      
+            </div>
+    
+          </div>
+    
+        </div>
+  
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <section class="articles">
+
+      <div class="articles__container container grid-container">
+
+        <div class="articles__breadcrumbs breadcrumbs">
+          <a class="breadcrumbs__link" href="index.html">Главная</a>
+          <p class="breadcrumbs__link breadcrumbs__link_type_current" href="#">Блог</p>
+        </div>
+
+        <h1 class="visually-hidden">Блог></h1>
+
+        <ul class="articles__list">
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/01.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/01.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/01.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+
+              </div>
+
+              <h3 class="article-link__title">Как ухаживать за обувью из кожи</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/02.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/02.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/02.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+
+              </div>
+
+              <h3 class="article-link__title">Неизведанные места озера Байкал</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/03.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/03.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/03.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+
+              </div>
+
+              <h3 class="article-link__title">Можно ли приручить дикую лису?</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/04.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/04.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/04.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+                
+              </div>
+
+              <h3 class="article-link__title">Лучшие модели ноутбуков для фриланса</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/05.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/05.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/05.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+                
+              </div>
+
+              <h3 class="article-link__title">10 необычных блюд из&nbsp;мандаринов</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/06.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/06.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/06.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+                
+              </div>
+
+              <h3 class="article-link__title">Люди, изменившие digital индустрию</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/07.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/07.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/07.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+               
+              </div>
+
+              <h3 class="article-link__title">Современные программы для дизайнера</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/08.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/08.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/08.jpg" alt="Изображение по теме статьи" width="195" height="195">
+               
+                </picture>
+                
+              </div>
+
+              <h3 class="article-link__title">Самый неприхотливые домашние растения</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/09.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/09.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/09.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+                
+              </div>
+
+              <h3 class="article-link__title">Как вырастить герберу в домашних условиях</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/10.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/10.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/10.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+                
+              </div>
+
+              <h3 class="article-link__title">Идеи для современного интерьера</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/11.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/11.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/11.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+                
+              </div>
+
+              <h3 class="article-link__title">Искусство фотографии</h3>
+
+            </a>
+          </li>
+
+          <li class="articles__item">
+            <a class="articles__article-link article-link" href="article.html">
+             
+              <div class="article-link__image-container">
+
+                <picture>
+
+                  <source srcset="assets/style/article-link/img/12.avif" type="image/avif">
+                  <source srcset="assets/style/article-link/img/12.webp" type="image/webp">
+                  <img class="article-link__image" src="assets/style/article-link/img/12.jpg" alt="Изображение по теме статьи" width="195" height="195">
+
+                </picture>
+                
+              </div>
+
+              <h3 class="article-link__title">Необычная пряжа</h3>
+
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="articles__pagination pagination">
+
+          <button class="pagination__arrow pagination__arrow_type_prev" aria-label="Открыть предыдущую страницу блога">
+  
+            <svg width="37" height="37" viewBox="0 0 37 37" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_3971_360)">
+              <path d="M32.375 16.9583H10.5296L16.0487 11.4237L13.875 9.25L4.625 18.5L13.875 27.75L16.0487 25.5762L10.5296 20.0417H32.375V16.9583Z" fill="currentColor"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3971_360">
+              <rect width="37" height="37" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>            
+  
+          </button>
+  
+          <ul class="pagination__pages-list">
+  
+            <li class="pagination__page-item">
+              <a class="pagination__page-link pagination__page-link_state_active" href="#"
+                aria-label="Страница блога 1, текущая"
+              >1</a>
+            </li>
+  
+            <li class="pagination__page-item">
+              <a class="pagination__page-link" href="#" aria-label="Страница блога 2">2</a>
+            </li>
+  
+            <li class="pagination__page-item">
+              <a class="pagination__page-link" href="#" aria-label="Страница блога 3">3</a>
+            </li>
+  
+          </ul>
+  
+          <button class="pagination__arrow pagination__arrow_type_next" aria-label="Открыть следующую страницу блога">
+  
+            <svg width="37" height="37" viewBox="0 0 37 37" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_3971_363)">
+              <path d="M4.625 16.9583H26.4704L20.9513 11.4237L23.125 9.25L32.375 18.5L23.125 27.75L20.9513 25.5762L26.4704 20.0417H4.625V16.9583Z" fill="currentColor"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3971_363">
+              <rect width="37" height="37" fill="currentColor" transform="matrix(-1 0 0 1 37 0)"/>
+              </clipPath>
+              </defs>
+              </svg>            
+  
+          </button>
+  
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container container">
+
+      <a class="footer__logo logo" href="index.html" aria-label="Логотип магазина ShopOnline">Shop<span 
+         class="logo_color_blue">Online</span></a>
+
+      <div class="footer__catalog navigation-block">
+
+        <h3 class="navigation-block__title"><button class="navigation-block__accordeon-btn" tabindex="-1">Каталог
+          <svg class="navigation-block__accordeon-arrow" width="15" height="6" viewBox="0 0 15 6" fill="none" 
+           xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 6L0.138784 0H14.8612L7.5 6Z" fill="white"/>
+          </svg>
+        </button></h3>
+
+        <ul class="navigation-block__list navigation-block__list_position_footer" id="categories-footer"></ul>
+
+      </div>
+
+      <div class="footer__for-buyers navigation-block">
+
+        <h3 class="navigation-block__title"><button class="navigation-block__accordeon-btn" tabindex="-1">Покупателям
+          <svg class="navigation-block__accordeon-arrow" width="15" height="6" viewBox="0 0 15 6" fill="none" 
+           xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 6L0.138784 0H14.8612L7.5 6Z" fill="white"/>
+          </svg>
+        </button></h3>
+
+        <ul class="navigation-block__list navigation-block__list_position_footer">
+
+          <li class="navigation-block__item">
+            <a class="navigation-block__link" href="#">Оплата заказа</a>
+          </li>
+
+          <li class="navigation-block__item">
+            <a class="navigation-block__link" href="#">Условия доставки</a>
+          </li>
+
+          <li class="navigation-block__item">
+            <a class="navigation-block__link" href="#">Условия возврата заказа</a>
+          </li>
+
+          <li class="navigation-block__item">
+            <a class="navigation-block__link" href="blog.html">Блог</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__contacts navigation-block">
+
+        <h3 class="navigation-block__title">Контакты</h3>
+
+        <p class="footer__phone" aria-label="Телефон">Тел: <a class="footer__contacts-link" href="tel:+79378392361">+7 937 839 23-61</a></p>
+
+        <p 
+          class="footer__email" 
+          aria-label="Электронная почта"
+        >Email: <a class="footer__contacts-link" href="mailto:OnlineShop@gmail.com">OnlineShop@gmail.com</a></p>
+
+        <h4 class="visually-hidden">Социальные сети</h4>
+
+        <ul class="footer__social">
+          
+          <li class="footer__icon">
+            <a class="footer__social-link footer__social-link_type_whatsapp" href="#" aria-label="Ватсап"></a>
+          </li>
+
+          <li class="footer__icon">
+            <a class="footer__social-link footer__social-link_type_instagram" href="#" aria-label="Инстаграм"></a>
+          </li>
+
+          <li class="footer__icon">
+            <a class="footer__social-link footer__social-link_type_youtube" href="#" aria-label="Ютуб"></a>
+          </li>
+
+          <li class="footer__icon">
+            <a class="footer__social-link footer__social-link_type_facebook" href="#" aria-label="Фейсбук"></a>
+          </li>
+
+          <li class="footer__icon">
+            <a class="footer__social-link footer__social-link_type_telegram" href="#" aria-label="Телеграм"></a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <p class="footer__copyright">© OnlineShop, 2021</p>
+
+      <div class="footer__creator">
+
+        <p class="footer__creator-name">Design by Anastasia Ilina</p>
+
+        <p class="footer__creator-contact">Tg: @Mrshmallowww</p>
+
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+.block-three {
+  grid-area: block-three;
+  font-size: 40px;
+  line-height: 120%;
+
+  @include up-mid-size {
+    font-size: 30px;
+  }
+
+  @include low-mid-size {
+    grid-area: none;
+    grid-row: 2 / 7;
+    grid-column: 5 / 10;
+    font-size: 16px;
+  }
+
+  @include min-size {
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+    font-size: 12px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    padding: 22px 20px;
+
+    @include up-mid-size {
+      padding: 22px;
+    }
+
+    @include low-mid-size {
+      padding: 10px;
+    }
+  }
+  
+  &__text {
+    width: 100%;
+    padding: 24px 26px;
+    color: $text-white;
+    background-color: #38c0eb;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    @include up-mid-size {
+      padding: 29px 25px 35px 25px;
+    }
+
+    @include low-mid-size {
+      padding: 16px 28px;
+      border-radius: 12px;
+    }
+
+    @include min-size {
+      padding: 9px 25px;
+      text-align: center;
+      border-radius: 8px;
+    }
+  }
+  
+  &__accent-text {
+    font-weight: 700;
+    font-size: 56px;
+
+    @include up-mid-size {
+      font-size: 40px;
+    }
+
+    @include low-mid-size {
+      font-size: 26px;
+    }
+
+    @include min-size {
+      font-size: 16px;
+    }
+  }
+}

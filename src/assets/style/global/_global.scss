@@ -1,0 +1,290 @@
+/*Шрифты*/
+@font-face {
+  @include font('Lato', 400)
+}
+
+@font-face {
+  @include font('Lato', 700)
+}
+
+@font-face {
+  @include font('OpenSans', 700)
+}
+
+
+/*Стили*/
+html {
+  position: relative;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 130%;
+  background-color: var(--text-white, #f9f9f9);
+}
+
+img, svg {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset {
+  margin: 0;
+}
+
+iframe {
+  border: none;
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+.container {
+  max-width: 1830px;
+  padding: 0 30px;
+  margin: 0 auto;
+
+  @include up-mid-size {
+    padding: 0 42px;
+  }
+  
+  @include low-mid-size {
+    padding: 0 34px;
+  }
+  
+  @include min-size {
+    padding: 0 20px;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  column-gap: 30px;
+
+  @include up-mid-size {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  @include low-mid-size {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  @include min-size {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.logo {
+  font-family: 'OpenSans';
+  font-weight: 700;
+  font-size: 30px; 
+  line-height: 41px;
+  letter-spacing: 0.06em;
+
+  &_color_blue {
+    color: var(--dark-blue, #3670c7);
+  }
+
+  @include low-mid-size {
+    font-size: 26px;
+    line-height: 35px;
+  }
+
+  @include min-size {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.common-header {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 130%;
+  color: $black;
+
+  @include up-mid-size {
+    font-size: 40px;
+  }
+
+  @include low-mid-size {
+    font-size: 28px;
+  }
+
+  @include min-size {
+    font-size: 18px;
+  }
+}
+
+.button {
+  background-color: $dark-blue;
+  color: $text-white;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.2s ease;
+
+  @include min-size {
+    border-radius: 6px;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $hover-blue;
+  }
+
+  &:focus {
+    background-color: $focus-blue;
+  }
+
+  &__disabled {
+    @extend %disabledElement;
+
+    &:hover {
+      background-color: $dark-blue;
+    }
+  }
+}
+
+.checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid $grey;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 10px;
+    height: 5px;
+    border: none;
+    transform: rotate(-45deg);
+  }
+
+  &:checked:before {
+    background-color: $dark-blue;
+    border: none;
+  }
+
+  &:checked::after {
+    border: 1px solid #fff;
+    border-top: none;
+    border-right: none;
+  }
+}
+
+.material-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, .25);
+}
+
+.hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  display: none;
+  visibility: hidden;
+}
+
+.await-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.await {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.await-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(50%, -50%);
+  border: 4px solid var(--dark-blue, #3670c7);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+} 
+      
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+  content: "";
+}

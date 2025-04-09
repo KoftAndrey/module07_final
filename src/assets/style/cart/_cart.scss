@@ -1,0 +1,1055 @@
+.cart {
+  margin: 0 0 100px 0;
+
+  @include up-mid-size {
+    margin: 0 0 60px 0;
+  }
+
+  @include min-size {
+    margin: 0 0 30px 0;
+  }
+
+  &__breadcrumbs {
+    margin: 33px 0 60px 0;
+
+    @include up-mid-size {
+      margin: 10px 0 50px 0;
+    }
+
+    @include low-mid-size {
+      margin: 5px 0 40px 0;
+    }
+
+    @include min-size {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__content {
+    grid-template-rows: repeat(2, auto);
+    row-gap: 30px;
+    font-size: 16px;
+    line-height: 130%;
+    color: $grey;
+
+    @include up-mid-size {
+      grid-template-rows: repeat(3, auto);
+    }
+
+    @include low-mid-size {
+      font-size: 14px;
+      row-gap: 20px;
+    }
+
+    @include min-size {
+      font-size: 10px;
+    }
+  }
+
+  &__order-btn {
+    align-self: center;
+    padding: 14px 20px 16px 20px;
+    margin: 0 0 2px 0;
+    width: 100%;
+    max-width: 266px;
+    font-weight: 700;
+    line-height: 130%;
+    text-align: center;
+
+    @include max-size {
+      max-width: 100%;
+    }
+
+    @include up-mid-size {
+      max-width: 266px;
+    }
+
+    @include low-mid-size {
+      margin: 0 0 14px 0;
+      font-weight: 14;
+      max-width: 100%;
+    }
+
+    @include min-size {
+      padding: 10px 20px;
+      margin: 0 0 4px 0;
+    }
+  }
+
+  &__delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: $del-btn-grey;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:active {
+      color: $grey;
+    }
+
+    &:focus {
+      color: $dark-grey;
+      outline: none;
+    }
+
+    @include min-size {
+      width: 24px;
+      height: 24px;
+    }
+
+    &_disabled {
+      @extend %disabledElement;
+
+      &:hover {
+        color: $del-btn-grey;
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+
+    &_type_late-flex {
+      justify-content: flex-start;
+      gap: 5px;
+
+      @include low-mid-size {
+        justify-content: space-between;
+      }
+
+      @include min-size {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__img-container {
+    display: inline-block;
+    border: 1px solid $light-grey;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__text {
+
+    &_weight_bold {
+      font-weight: 700;
+    }
+
+    &_color_black {
+      color: $black;
+    }
+
+    &_color_blue {
+      color: $dark-blue;
+    }
+
+    &_type_link {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__card {
+    padding: 30px 40px;
+
+    @include up-mid-size {
+      padding: 30px 30px 40px 30px;
+    }
+
+    @include low-mid-size {
+      padding: 30px 64px;
+      margin: 0 -34px;
+      border-radius: 0;
+    }
+
+    @include min-size {
+      padding: 15px 20px;
+      margin: 0 -20px;
+    }
+
+    &_type_goods {
+      grid-column: 1 / 13;
+      grid-row: 1 / 2;
+
+      @include low-mid-size {
+        grid-column: 1 / 10;
+        padding-bottom: 43px;
+      }
+
+      @include min-size {
+        grid-column: 1 / 3;
+        padding-bottom: 23px;
+      }
+    }
+
+    &_type_total {
+      grid-column: 13 / 17;
+      grid-row: 1 / 3;
+      align-self: start;
+
+      @include up-mid-size {
+        grid-column: 1 / 7;
+        grid-row: 3 / 4;
+        justify-self: start;
+        padding: 30px 30px 32px 30px;
+        max-width: 420px;
+      }
+
+      @include low-mid-size {
+        grid-column: 1 / 10;
+        max-width: calc(100% + 68px);
+        justify-self: stretch;
+        padding: 31px 64px 32px 64px;
+        font-size: 12px;
+      }
+
+      @include min-size {
+        grid-column: 1 / 3;
+        padding: 15px 20px 22px 20px;
+        font-size: 10px;
+      }
+    }
+
+    &_type_delivery {
+      grid-column: 1 / 13;
+      grid-row: 2 / 3;
+
+      @include up-mid-size {
+        grid-column: 1 / 13;
+        grid-row: 2 / 3;
+        padding: 30px;
+      }
+
+      @include low-mid-size {
+        grid-column: 1 / 10;
+        padding: 30px 64px 25px 64px;
+      }
+
+      @include min-size {
+        grid-column: 1 / 3;
+        padding: 15px 20px;
+      }
+    }
+  }
+
+  &__goods-header {
+    display: inline-block;
+    margin: 0 0 15px 0;
+    position: relative;
+
+    @include up-mid-size {
+      margin: 0 0 12px 0;
+    }
+
+    @include low-mid-size {
+      margin: 0 0 18px 0;
+    }
+
+    @include min-size {
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__goods-number {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 14px;
+    height: 31px;
+    font-size: 24px;
+    line-height: 130%;
+
+    @include up-mid-size {
+      right: -22px;
+    }
+
+    @include low-mid-size {
+      right: -18px;
+      font-size: 16px;
+    }
+
+    @include min-size {
+      top: 1px;
+      right: -17px;
+      font-size: 12px;
+    }
+  }
+
+  &__goods-actions {
+    padding: 0 0 16px 2px;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $light-grey;
+
+    @include up-mid-size {
+      padding: 0 0 32px 2px;
+    }
+
+    @include low-mid-size {
+      align-items: flex-end;
+    }
+
+    @include min-size {
+      padding: 0 0 15px 0;
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__goods-all {
+    padding: 0 0 0 31px;
+    cursor: pointer;
+    position: relative;
+
+    @include min-size {
+      padding: 2px 0 5px 26px;
+    }
+  }
+
+  &__goods-clearall {
+
+    @include up-mid-size {
+      margin: -10px 0 0 0;
+    }
+
+    @include low-mid-size {
+      display: none;
+    }
+  }
+
+  &__goods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include low-mid-size {
+      gap: 20px;
+    }
+
+    @include min-size {
+      gap: 15px;
+    }
+  }
+
+  &__goods-item {
+    padding: 0 0 0 2px;
+    display: grid;
+    grid-template-columns: 28px 130px auto auto 250px;
+    gap: 12px;
+    align-items: start;
+    pointer-events: auto;
+
+    &_status_await {
+      @extend %waitingElement;
+    }
+
+    @include up-mid-size {
+      padding: 0;
+      gap: 14px;
+    }
+
+    @include low-mid-size {
+      grid-template-columns: 91px auto;
+      grid-template-rows: auto auto 37px;
+      gap: 7px 11px;
+      position: relative;
+    }
+
+    @include min-size {
+      gap: 10px 8px;
+    }
+
+    &:not(:last-child) {
+
+      @include low-mid-size {
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid $light-grey;
+      }
+
+      @include min-size {
+        padding: 0 0 12px 0;
+      }
+    }
+  }
+
+  &__goods-product {
+    grid-column: 1 / 2;
+    margin: 0 0 5px 0;
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    position: relative;
+
+    @include low-mid-size {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+  }
+
+  &__goods-picture {
+    grid-column: 2 / 3;
+    width: 130px;
+    height: 130px;
+
+    @include low-mid-size {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      width: 91px;
+      height: 91px;
+    }
+  }
+
+  &__goods-image {
+    @extend %inblockImage;
+  }
+
+  &__product-info {
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include low-mid-size {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      gap: 6px;
+      width: auto;
+    }
+  }
+
+  &__product-name {
+    align-self: start;
+    display: inline-block;
+    justify-self: start;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $black;
+
+    @include low-mid-size {
+      font-size: 18px;
+    }
+
+    @include min-size {
+      font-size: 12px;
+    }
+  }
+
+  &__product-about {
+
+    @include low-mid-size {
+      font-size: 10px;
+      line-height: 13px;
+    }
+
+    @include min-size {
+      display: none;
+    }
+  }
+
+  &__goods-counter {
+    grid-column: 4 / 5;
+    align-self: start;
+    justify-self: end;
+    margin: 0 20px;
+
+    @include low-mid-size {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      align-self: end;
+      margin: 0;
+    }
+
+    @include min-size {
+      justify-self: center;
+      margin: 0 0 2px 0;
+    }
+  }
+
+  &__goods-right {
+    grid-column: 5 / 6;
+    justify-self: end;
+    width: 163px;
+    text-align: right;
+
+    @include up-mid-size {
+      width: 152px;
+    }
+    
+    @include low-mid-size {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-self: start;
+      display: flex;
+      gap: 12px;
+      width: auto;
+      align-items: center;
+    }
+
+    @include min-size {
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+  }
+
+  &__goods-price {
+    margin: 0 0 6px 0;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 120%;
+    color: $black;
+
+    @include low-mid-size {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    @include min-size {
+      font-size: 16px;
+    }
+  }
+
+  &__goods-discount {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    text-decoration: line-through;
+
+    @include low-mid-size {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+
+  &__goods-credit {
+    color: $dark-blue;
+  }
+
+  &__goods-delete {
+    display: none;
+
+    @include low-mid-size {
+      display: block;
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      align-self: end;
+      justify-self: end;
+    }
+
+    @include min-size {
+      margin: 0 0 4px 0;
+    }
+  }
+
+  &__total-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include low-mid-size {
+      gap: 18px;
+    }
+  }
+
+  &__total-top {
+    display: flex;
+    justify-content: space-between;
+    color: $black;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 120%;
+
+    @include low-mid-size {
+      font-size: 22px;
+    }
+
+    @include min-size {
+      font-size: 16px;
+    }
+  }
+
+  &__total-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include low-mid-size {
+      gap: 13px;
+    }
+
+    @include min-size {
+      gap: 10px;
+    }
+  }
+
+  &__total-point {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include low-mid-size {
+      gap: 8px;
+    }
+
+    @include min-size {
+      gap: 10px;
+    }
+  }
+
+  &__total-delivery {
+    margin: 0 0 2px 0;
+    
+    @include low-mid-size {
+      margin: 0;
+    }
+  }
+
+  &__delivery-type {
+    margin: 0 0 4px 0;
+
+    @include low-mid-size {
+      margin: 0;
+    }
+  }
+
+  &__total-payment {
+    margin: 0 0 10px 0;
+
+    @include low-mid-size {
+      margin: 0 0 20px 0;
+    }
+
+    @include min-size {
+      margin: 0 0 5px 0;
+    }
+  }
+
+  &__total-terms {
+    position: relative;
+    padding: 0 0 0 30px;
+    margin: 0 -20px 0 0;
+
+    @include low-mid-size {
+      margin: 0;
+    }
+
+    @include min-size {
+      padding: 0 0 0 25px;
+    }
+
+    input {
+      margin: 6px 0 0 0;
+
+      @include low-mid-size {
+        margin: 0;
+      }
+    }
+  }
+
+  &__total-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--grey);
+  }
+
+  &__empty-header {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 120%;
+    @include low-mid-size {
+      font-size: 22px;
+    }
+
+    @include min-size {
+      font-size: 16px;
+    }
+  }
+
+  &__empty-link {
+    display: inline-block;
+    font-weight: 700;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $grey;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $black;
+      border-bottom-color: $black;
+    }
+  }
+
+  &__delivery-top {
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include up-mid-size {
+      margin: 0 0 34px 0;
+    }
+
+    @include low-mid-size {
+      margin: 0 0 20px 0;
+    }
+
+    @include min-size {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &__delivery-header {
+
+    @include low-mid-size {
+      display: none;;
+    }
+  }
+
+  &__change-delivery {
+    margin: 0 0 13px 0;
+    background: transparent;
+    border: none;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:active {
+      color: $hover-blue;
+    }
+
+    &:focus {
+      color: $focus-blue;
+    }
+
+    @include up-mid-size {
+      margin: 0;
+    }
+
+    @include low-mid-size {
+      font-size: 16px;
+    }
+
+    @include min-size {
+      font-size: 12px;
+    }
+  }
+
+  &__delivery-info {
+    display: grid;
+    grid-template-columns: 21.5% auto;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 15px;
+
+    @include up-mid-size {
+      grid-template-columns: 30% auto;
+      row-gap: 20px;
+    }
+
+    @include low-mid-size {
+      grid-template-rows: auto 48px auto auto;
+      row-gap: 15px;
+    }
+
+    @include min-size {
+      grid-template-rows: repeat(4, auto);
+      row-gap: 10px;
+    }
+  }
+
+  &__delivery-point {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+
+    @include low-mid-size {
+      display: none;
+    }
+  }
+
+  &__delivery-address {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    @include low-mid-size {
+      grid-column: 1 / 3;
+    }
+
+    @include min-size {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &__delivery-price {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    margin: 0 0 17px 0;
+
+    @include up-mid-size {
+      margin: 0;
+    }
+
+    @include low-mid-size {
+      display: none;
+    }
+  }
+
+  &__delivery-cost {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+
+    @include low-mid-size {
+      grid-column: 1 / 3;
+      align-self: start;
+      padding: 0 0 20px 0;
+      border-bottom: 1px solid $light-grey;
+    }
+
+    @include min-size {
+      padding: 0 0 16px 0;
+      margin: 0 0 7px 0;
+    }
+  }
+
+  &__delivery-date {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+
+    @include low-mid-size {
+      grid-column: 1 / 3;
+      font-size: 16px;
+    }
+
+    @include min-size {
+      font-size: 12px;
+    }
+  }
+
+  &__delivery-list {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    display: flex;
+    justify-content: flex-start;
+    gap: 17px;
+
+    @include low-mid-size {
+      grid-row: 4 / 5;
+      grid-column: 1 / 3;
+      gap: 15px;
+    }
+  }
+
+  &__delivery-link {
+    width: 80px;
+    height: 80px;
+
+    @include low-mid-size {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__skeleton {
+    &_item-skeleton-body {
+      padding: 0 0 0 2px;
+      display: grid;
+      grid-template-columns: 28px 130px auto auto 250px;
+      gap: 12px;
+      align-items: start;
+
+      @include low-mid-size {
+        padding: 0 0 20px;
+        grid-template-columns: 91px auto;
+        grid-template-rows: auto auto 37px;
+        gap: 7px 11px;
+        position: relative;
+      }
+    }
+
+    &_item-skeleton-checkbox {
+      align-self: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+
+      @include low-mid-size {
+        display: none;
+      }
+    }
+
+    &_item-skeleton-image {
+      width: 128px;
+      height: 128px;
+
+      @include low-mid-size {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        width: 91px;
+        height: 91px;
+      }
+    }
+
+    &_item-skeleton-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include low-mid-size {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+      }
+    }
+
+    &_item-skeleton-description {
+      height: 30px;
+      width: 440px;
+
+      @include up-mid-size {
+        width: 300px;
+      }
+
+      @include low-mid-size {
+        height: 20px;
+        width: 100%;
+      }
+
+      &:last-child {
+        width: 220px;
+
+        @include up-mid-size {
+          width: 150px;
+        }
+
+        @include low-mid-size {
+          width: 60%;
+        }
+      }
+    }
+
+    &_item-skeleton-price {
+      grid-column: 5 / 6;
+      justify-self: end;
+      height: 30px;
+      width: 100px;
+
+      @include low-mid-size {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        align-self: end;
+        width: 89px;
+      }
+    }
+
+    &_delivery-subtitle {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      height: 30px;
+      width: 100px;
+
+      @include up-mid-size {
+        width: 150px;
+      }
+
+      @include low-mid-size {
+        height: 20px;
+        width: 100px;
+      }
+
+      &_bottom {
+        grid-row: 2 / 3;
+
+        @include min-size {
+          display: none;
+        }
+      }
+    }
+
+    &_delivery-description {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      height: 30px;
+      width: 70%;
+
+      @include low-mid-size {
+        height: 20px;
+      }
+    }
+
+    &_delivery-gallery {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      display: flex;
+      justify-content: flex-start;
+      gap: 17px;
+
+      @include low-mid-size {
+        grid-column: 1 / 3;
+        gap: 15px;
+      }
+    }
+
+    &_delivery-picture {
+      width: 80px;
+      height: 80px;
+
+      @include low-mid-size {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &_total {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &_total-title {
+      height: 45px;
+      margin: 0 0 10px;
+
+      @include low-mid-size {
+        height: 30px;
+      }
+    }
+
+    &_total-info-top,
+    &_total-info-bottom {
+      height: 30px;
+
+      @include low-mid-size {
+        height: 20px;
+      }
+    }
+
+    &_total-info-bottom {
+      margin: 0 0 70px;
+
+      @include low-mid-size {
+        margin: 0 0 50px;
+      }
+    }
+
+    &_total-button {
+      align-self: center;
+      width: 270px;
+      height: 50px;
+
+      @include low-mid-size {
+        width: 100%;
+        height: 35px;
+      }
+    }
+  }
+}

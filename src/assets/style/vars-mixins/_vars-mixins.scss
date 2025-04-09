@@ -1,0 +1,70 @@
+// vars
+$text-white: #fff;
+$dark-blue: #3670c7;
+$hover-blue: #5d92e0;
+$focus-blue: #3b65a5;
+$red: #ff0000;
+$black: #2d2d2d;
+$dark-grey: #525252;
+$grey: #8f8f8f;
+$light-grey: #E8E8E8;
+$del-btn-grey: #C9C9C9;
+
+
+// templates
+%inblockImage {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+%waitingElement {
+  opacity: 0.5;
+  cursor: wait;
+  pointer-events: none;
+}
+
+%disabledElement {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+// mixins
+// for fonts
+@mixin font($name, $weight) {
+  font: {
+    family: $name;
+    weight: $weight;
+    display: swap;
+  }
+  src: url('../assets/fonts/#{ $name }-#{ $weight }.woff2') format('woff2'),
+       url('../assets/fonts/#{ $name }-#{ $weight }.woff') format('woff'),
+}
+
+// for media queries
+@mixin max-size {
+  @media (max-width: 1700px) {
+    @content;
+  }
+}
+
+@mixin up-mid-size {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin low-mid-size {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin min-size {
+  @media (max-width: 640px) {
+    @content;
+  }
+}

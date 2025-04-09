@@ -1,0 +1,74 @@
+.block-four {
+  grid-area: block-four;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 130%;
+  color: $text-white;
+
+  @include up-mid-size {
+    font-size: 30px;
+  }
+
+  @include low-mid-size {
+    grid-area: none;
+    grid-row: 6 / 10;
+    grid-column: 1 / 5;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  @include min-size {
+    grid-row: 4 / 5;
+    grid-column: 1 / 3;
+    font-size: 12px;
+  }
+  
+  &__card-top {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    grid-area: card-top;
+    padding: 30px;
+
+    @include up-mid-size {
+      padding: 20px;
+    }
+
+    @include min-size {
+      padding: 16px 10px;
+    }
+  }
+  
+  &__card-bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    grid-area: card-bottom;
+    padding: 30px;
+
+    @include up-mid-size {
+      padding: 20px;
+    }
+
+    @include min-size {
+      padding: 16px 10px;
+    }
+  }
+  
+  &__text {
+    position: relative;
+    z-index: 2;
+
+    @include up-mid-size {
+      max-width: 280px;
+    }
+
+    @include low-mid-size {
+      max-width: 155px;
+    }
+
+    @include min-size {
+      max-width: 100%;
+    }
+  }
+}
