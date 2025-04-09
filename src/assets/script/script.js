@@ -8,7 +8,7 @@ export const SHORT_API_ADDRESS = 'https://comet-sphenoid-diamond.glitch.me/';
 export const API_ADDRESS = `${SHORT_API_ADDRESS}api/`;
 
 const pageUrl = window.location.pathname;
-const currentPage = pageUrl.match(/index|catalog|product|cart/)[0];
+const currentPage = pageUrl ? pageUrl.match(/index|catalog|product|cart/)[0] : 'index';
 
 setHeaderAndFooterMenus();
 

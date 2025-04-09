@@ -1,33 +1,33 @@
-/******/ (function() { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	// The require scope
 /******/ 	var __webpack_require__ = {};
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 		__webpack_require__.d = (exports, definition) => {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  Y: function() { return /* binding */ API_ADDRESS; },
-  D: function() { return /* binding */ SHORT_API_ADDRESS; }
+  Y: () => (/* binding */ API_ADDRESS),
+  D: () => (/* binding */ SHORT_API_ADDRESS)
 });
 
 ;// CONCATENATED MODULE: ./src/assets/script/modules/request.js
@@ -54,7 +54,7 @@ const fetchRequest = async (url, {
     callback(err);
   }
 };
-/* harmony default export */ var request = (fetchRequest);
+/* harmony default export */ const request = (fetchRequest);
 ;// CONCATENATED MODULE: ./src/assets/script/modules/shopSessionData.js
 const shopSessionData = {
   set: (field, value) => {
@@ -75,7 +75,7 @@ const shopSessionData = {
     sessionStorage.removeItem('shop');
   }
 };
-/* harmony default export */ var modules_shopSessionData = (shopSessionData);
+/* harmony default export */ const modules_shopSessionData = (shopSessionData);
 ;// CONCATENATED MODULE: ./src/assets/script/modules/headerAndFooter.js
 
 
@@ -288,7 +288,7 @@ const setTimer = gmt => {
   const timerBlock = document.querySelector('[data-timer-deadline]');
   return timerBlock ? timer(timerBlock, timerBlock.dataset.timerDeadline, gmt) : null;
 };
-/* harmony default export */ var modules_timer = (setTimer);
+/* harmony default export */ const modules_timer = (setTimer);
 ;// CONCATENATED MODULE: ./src/assets/script/modules/catalogPage.js
 
 
@@ -359,7 +359,7 @@ const renderCatalogPage = () => {
     }
   });
 };
-/* harmony default export */ var catalogPage = (renderCatalogPage);
+/* harmony default export */ const catalogPage = (renderCatalogPage);
 ;// CONCATENATED MODULE: ./src/assets/script/modules/productPage.js
 
 
@@ -515,7 +515,7 @@ const renderProductPage = () => {
     }
   });
 };
-/* harmony default export */ var productPage = (renderProductPage);
+/* harmony default export */ const productPage = (renderProductPage);
 ;// CONCATENATED MODULE: ./src/assets/script/modules/cartPage.js
 
 
@@ -1259,7 +1259,7 @@ const renderCartPage = () => {
     }
   });
 };
-/* harmony default export */ var cartPage = (renderCartPage);
+/* harmony default export */ const cartPage = (renderCartPage);
 ;// CONCATENATED MODULE: ./src/assets/script/script.js
 
 
@@ -1269,7 +1269,7 @@ const renderCartPage = () => {
 const SHORT_API_ADDRESS = 'https://comet-sphenoid-diamond.glitch.me/';
 const API_ADDRESS = `${SHORT_API_ADDRESS}api/`;
 const pageUrl = window.location.pathname;
-const currentPage = pageUrl.match(/index|catalog|product|cart/)[0];
+const currentPage = pageUrl ? pageUrl.match(/index|catalog|product|cart/)[0] : 'index';
 setHeaderAndFooterMenus();
 switch (currentPage) {
   case 'index':
